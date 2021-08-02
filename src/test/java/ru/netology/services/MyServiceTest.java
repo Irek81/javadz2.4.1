@@ -12,7 +12,7 @@ public class MyServiceTest {
     @Test
     public void shouldSumAllSales() {
         MyService service = new MyService();
-        long [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
+        int [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
         int actual = service.sumAllSales(sales);
         int expected = 180;
         assertEquals(expected, actual);
@@ -21,7 +21,7 @@ public class MyServiceTest {
     @Test
     public void shouldAverage() {
         MyService servic = new MyService();
-        long [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
+        int [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
         int actual = servic.average(sales);
         int expected = 15;
         assertEquals(expected, actual);
@@ -30,7 +30,7 @@ public class MyServiceTest {
     @Test
     public void shouldMaxMonth() {
         MyService service = new MyService();
-        long [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
+        int [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
         int actual = service.maxSales(sales);
         int expected = 8;
         assertEquals(expected, actual);
@@ -39,7 +39,7 @@ public class MyServiceTest {
     @Test
     public void shouldMinMonth() {
         MyService service = new MyService();
-        long [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
+        int [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
         int actual = service.minSales(sales);
         int expected = 9;
         assertEquals(expected, actual);
@@ -48,7 +48,7 @@ public class MyServiceTest {
     @Test
     public void shouldUnderAverageSale() {
         MyService service = new MyService();
-        long [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
+        int [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
         int actual = service.underAverageSale(sales);
         int expected = 5;
         assertEquals(expected, actual);
@@ -57,9 +57,9 @@ public class MyServiceTest {
     @Test
     public void shouldOverAverageSale() {
         MyService service = new MyService();
-        long [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
-        int actual =5service.overAverageSale(sales);
-        int expected = 7;
+        int [] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
+        int actual = service.overAverageSale(sales);
+        int expected = 5;
         assertEquals(expected, actual);
     }
 }

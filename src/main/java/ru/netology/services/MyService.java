@@ -2,30 +2,28 @@ package ru.netology.services;
 
 public class MyService {
 
-    public int sumAllSales(long[] sales) {
+    public int sumAllSales(int[] sales) {
         int sum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum += sales[i];
+        for (int sale : sales) {
+            sum = sum + sale;
         }
         return sum;
     }
 
-    public int average(long[] sales) {
+    public int average(int[] sales) {
         int average = 0;
-        if (sales.length > 0) {
-            int sum = 0;
-            for (int i = 0; i < sales.length; i++) {
-                sum += sales[i];
-            }
-            average = sum / sales.length;
+        int sum = 0;
+        for (int sale : sales) {
+            sum = sum + sale;
         }
+        average = sum / sales.length;
         return average;
     }
 
-    public int maxSales(long[] sales) {
+    public int maxSales(int[] sales) {
         int maxMonth = 0;
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
-        for (long sale : sales) {
+        for (int sale : sales) {
             // sales[minMonth] - продажи в месяце minMonth
             // sale - продажи в рассматриваемом месяце
             if (sale >= sales[maxMonth]) {
@@ -36,10 +34,10 @@ public class MyService {
         return maxMonth + 1;
     }
 
-    public int minSales(long[] sales) {
+    public int minSales(int[] sales) {
         int minMonth = 0;
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
-        for (long sale : sales) {
+        for (int sale : sales) {
             // sales[minMonth] - продажи в месяце minMonth
             // sale - продажи в рассматриваемом месяце
             if (sale <= sales[minMonth]) {
@@ -50,9 +48,9 @@ public class MyService {
         return minMonth + 1;
     }
 
-    public int underAverageSale(long[] sales) { // Месяцы с продажами выше среднего
+    public int underAverageSale(int[] sales) { // Месяцы с продажами выше среднего
         int underAverage = 0;
-        for (long sale : sales) {
+        for (int sale : sales) {
             if (sale < average(sales)) {
                 underAverage += 1;
             }
@@ -60,9 +58,9 @@ public class MyService {
         return underAverage;
     }
 
-    public int overAverageSale(long[] sales) { // Месяцы с продажами выше среднего
+    public int overAverageSale(int[] sales) { // Месяцы с продажами выше среднего
         int overAverage = 0;
-        for (long sale : sales) {
+        for (int sale : sales) {
             if (sale > average(sales)) {
                 overAverage += 1;
             }
