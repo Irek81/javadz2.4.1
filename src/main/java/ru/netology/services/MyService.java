@@ -2,7 +2,7 @@ package ru.netology.services;
 
 public class MyService {
 
-    public int sumAllSales(int[] sales) {
+    public int sumAllSales(long[] sales) {
         int sum = 0;
         for (int i = 0; i < sales.length; i++) {
             sum += sales[i];
@@ -10,19 +10,19 @@ public class MyService {
         return sum;
     }
 
-    public int average(int[] sales) {
+    public int average(long[] sales) {
         int average = 0;
         if (sales.length > 0) {
             int sum = 0;
-            for (int j = 0; j < sales.length; j++) {
-                sum += sales[j];
+            for (int i = 0; i < sales.length; i++) {
+                sum += sales[i];
             }
             average = sum / sales.length;
         }
         return average;
     }
 
-    public int maxSales(int[] sales) {
+    public int maxSales(long[] sales) {
         int maxMonth = 0;
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
         for (long sale : sales) {
@@ -36,7 +36,7 @@ public class MyService {
         return maxMonth + 1;
     }
 
-    public int minSales(int[] sales) {
+    public int minSales(long[] sales) {
         int minMonth = 0;
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
         for (long sale : sales) {
@@ -50,9 +50,23 @@ public class MyService {
         return minMonth + 1;
     }
 
-    public int monthUnderAverage (int[] sales) {
-        int mAU = 0;
-        int i = 0;
+    public int underAverageSale(long[] sales) { // Месяцы с продажами выше среднего
+        int underAverage = 0;
+        for (long sale : sales) {
+            if (sale < average(sales)) {
+                underAverage += 1;
+            }
+        }
+        return underAverage;
     }
 
+    public int overAverageSale(long[] sales) { // Месяцы с продажами выше среднего
+        int overAverage = 0;
+        for (long sale : sales) {
+            if (sale > average(sales)) {
+                overAverage += 1;
+            }
+        }
+        return overAverage;
+    }
 }
