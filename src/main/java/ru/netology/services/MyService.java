@@ -11,12 +11,12 @@ public class MyService {
     }
 
     public int average(int[] sales) {
-        int average = 0;
-        int sum = 0;
-        for (int sale : sales) {
-            sum = sum + sale;
-        }
-        average = sum / sales.length;
+//        int average = 0;
+//        int sum = 0;
+//        for (int sale : sales) {
+//            sum = sum + sale;
+//        }
+        int average = sumAllSales(sales) / sales.length;
         return average;
     }
 
@@ -48,7 +48,7 @@ public class MyService {
         return minMonth + 1;
     }
 
-    public int underAverageSale(int[] sales) { // Месяцы с продажами выше среднего
+    public int underAverageSale(int[] sales) { // Месяцы с продажами ниже среднего
         int underAverage = 0;
         for (int sale : sales) {
             if (sale < average(sales)) {
